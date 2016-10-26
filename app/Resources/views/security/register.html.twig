@@ -1,0 +1,47 @@
+<html>
+    <head>
+        {# ... #}
+
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/css/register.css') }}" rel="stylesheet" />
+        {% endblock %}
+    </head>
+
+    <body>
+<div id="conteneur">
+<form id="myform" method="post" action="" >
+	<ul class="formRegister">
+	<li>
+		<label for="login">Pseudo</label>
+		<input type="text" id="login" name="login"/>
+	</li>
+
+	<li>
+		<label for="email">Adresse email</label>
+		<input type="text" id="email" name="email"/>
+	</li>
+
+	<li>
+		<label for="pass">Mot de passe</label>
+		<input type="password" id="pass" name="pass"/>
+	</li>
+
+	<li>
+		<label for="repassword">Retapez le mot de passe</label>
+		<input type="password" id="repassword" name="repassword"/>
+	</li>
+
+
+	<li>
+		<label for="captcha">Captcha</label>
+		<input type="text" id="captcha" name="captcha"/>
+		<input type="hidden" id="_csrf_token" value="ac8fd90365869fa355ff73482af0f1f8" name="_csrf_token"/></li>
+	</ul>
+
+	<p><input type="submit" value="S'inscrire"/></p>
+
+</form>
+</div>
+
+ </body>
+</html>

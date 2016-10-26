@@ -1,0 +1,53 @@
+{# add navigation current nav mark #}
+{% set route = app.request.get('_route') %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Back-Office Blog Test{% endblock %}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    {% block stylesheets %}
+
+        
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+
+        {% block header %}{% endblock %}
+
+        {% block flash %}
+
+                <div>
+
+                </div>
+           
+
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+
+        {% endblock %}
+
+       
+        <div class="container container-content">
+            <div id="layout-view" class="view view-villa-all">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        
+
+        {% block footer %}{% endblock footer %}
+
+    </div>
+
+    {% block javascripts %}
+        
+       
+    {% endblock %}
+
+</body>
+</html>
